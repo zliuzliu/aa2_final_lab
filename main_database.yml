@@ -17,10 +17,10 @@
   vars:
     postgres_rhel8_repo: "https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm"
     postgres_packages:
-      - postgresql10-10.18-1PGDG 
-      - postgresql10-server-10.18-1PGDG
-      - postgresql10-contrib-10.18-1PGDG
-      - postgresql10-libs-10.18-1PGDG
+      - postgresql12
+      - postgresql12-server
+      - postgresql12-contrib
+      - postgresql12-libs
     postgres_library: python-psycopg2
     postgres_10_data_dir: /var/lib/pgsql/10/data
     postgres_10_bin_path: /usr/pgsql-10/bin
