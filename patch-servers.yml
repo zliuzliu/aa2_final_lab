@@ -1,6 +1,6 @@
 ---
 - name: Manage OpenStack Servers
-  hosts: control_node
+  hosts: control
   gather_facts: false
   become: false
   collections:
@@ -21,6 +21,9 @@
 - name: update resolve.conf
   hosts: load_balancers,app_servers,database_servers
   become: true
+  vars:
+    satellite_activationkey: gpte-labs-rhel8
+    satellite_org: prod
   tasks:
     - name: DNS IP updated
       lineinfile:
