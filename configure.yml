@@ -1,5 +1,5 @@
 - name: Play to automate process
-  hosts: all
+  hosts: load_balancers,app_servers,database_servers
   become: yes
   vars:
     satellite_activationkey: gpte-labs-rhel8
