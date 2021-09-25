@@ -41,10 +41,10 @@
 
   tasks:
 
-    - dnf_module:
+    - name: disable postgresql dnf module
+      dnf:
         name: postgresql
-        state: disabled
-
+        module: false
     - name: Install Postgres packages
       package:
         name: "{{ __package }}"
