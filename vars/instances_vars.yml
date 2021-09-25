@@ -7,7 +7,7 @@ instances:
     security_group: 5448-HostSG
     internal_network: 5448-dev-network
     metadata:
-      AnsibleGroup: osp_instances
+      AnsibleGroup: load_balancers
       deployment_name: dev
 
   - name: app1
@@ -17,7 +17,7 @@ instances:
     security_group: 5448-HostSG
     internal_network: 5448-dev-network
     metadata:
-      AnsibleGroup: osp_instances
+      AnsibleGroup: app_servers
       deployment_name: dev
 
   - name: app2
@@ -27,7 +27,7 @@ instances:
     security_group: 5448-HostSG
     internal_network: 5448-dev-network
     metadata:
-      AnsibleGroup: osp_instances
+      AnsibleGroup: app_servers
       deployment_name: dev
 
   - name: appdb1
@@ -37,5 +37,5 @@ instances:
     security_group: 5448-HostSG
     internal_network: 5448-dev-network
     metadata:
-      AnsibleGroup: osp_instances
+      AnsibleGroup: database_servers
       deployment_name: dev
