@@ -45,6 +45,7 @@
       package:
         name: "{{ __package }}"
         state: present
+        disable_gpg_check: true
       loop: 
         - "{{ postgres_rhel8_repo }}"        
         - "{{ postgres_packages }}"
