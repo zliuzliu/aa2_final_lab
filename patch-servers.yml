@@ -25,6 +25,7 @@
       loop:
         - PEERDNS=no
         - DNS1=150.239.27.24
+        - DNS2=8.8.8.8
     
     - name: Restart NetworkManager
       service:
