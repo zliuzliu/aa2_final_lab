@@ -1,13 +1,4 @@
 ---
-- name: Manage OpenStack Servers
-  hosts: control_node
-  gather_facts: false
-  become: false
-  collections:
-    - gpte.openstack
-  roles:
-    - openstack_manage_inmemory_inventory
-
 - name: Deploy, configure, and populate Postgres 10
   hosts: database_servers
   become: true
