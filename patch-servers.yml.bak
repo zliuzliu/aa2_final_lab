@@ -22,14 +22,13 @@
   hosts: load_balancers,app_servers,database_servers
   become: true
   tasks:
-    - name: DNS IP updated
-      lineinfile:
-        state: present
-        path: /etc/sysconfig/network-scripts/ifcfg-eth0
-        line: "{{ item }}"
-      loop:
-        - PEERDNS=no
-        - DNS1={{ hostvars.localhost.ansible_default_ipv4.address }}
+    - name: Insert DNS IP
+      command: >-
+        nmcli connection modify "System eth0"
+        ipv4.ignore-auto-dns yes
+        ipv4.dns {{ ansible_default_ipv4.address }}
+        +ipv4.dns {{ ansible_dns.nameservers.0 }}
+        +ipv4.dns {{ hostvars.localhost.ansible_default_ipv4.address }}
     
     - name: Restart NetworkManager
       service:
