@@ -1,6 +1,6 @@
 ---
 - name: Manage OpenStack Servers
-  hosts: control
+  hosts: control_node
   gather_facts: false
   become: false
   collections:
@@ -32,7 +32,7 @@
         line: "{{ item }}"
       loop:
         - PEERDNS=no
-        - DNS1={{ hostvars.localhost.ansible_default_ipv4.address }}
+        - DNS1=150.239.27.24
     
     - name: Restart NetworkManager
       service:
