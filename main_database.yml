@@ -40,6 +40,9 @@
         owner: flask
 
   tasks:
+    - name: disable postgres module
+      command: "dnf module disable postgresql"
+
     - name: Install Postgres packages
       package:
         name: "{{ __package }}"
