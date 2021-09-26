@@ -42,7 +42,6 @@
   tasks:
     - name: disable postgres module
       command: "dnf module disable postgresql -y"
-      warn: false
 
     - name: Install Postgres packages
       package:
