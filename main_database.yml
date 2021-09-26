@@ -118,3 +118,12 @@
       service:
         name: "{{ postgres_service }}"
         state: restarted
+
+    - name: Setup firewall
+      include_role:
+        name: firewall
+      vars:
+        firewall_services:
+          - http
+        firewall_tcp_ports:
+          - 5432

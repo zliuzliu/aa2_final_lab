@@ -110,3 +110,12 @@
         name: "{{ flask_app_name }}.service"
         state: restarted 
         enabled: yes
+
+    - name: Setup firewall
+      include_role:
+        name: firewall
+      vars:
+        firewall_services:
+          - https
+        firewall_tcp_ports:
+          - 443

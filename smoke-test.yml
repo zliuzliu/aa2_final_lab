@@ -40,7 +40,7 @@
 
     - name: Check webserver for correct response
       uri:
-        url: "http://192.168.51.14/ping"
+        url: "http://localhost/ping"
         return_content: yes
       until: '"alive" in result.content'
       retries: 10
