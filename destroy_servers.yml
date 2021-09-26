@@ -9,7 +9,7 @@
   roles:
     - openstack_manage_inmemory_inventory
 
-- hosts: control_node
+- hosts: control
   tasks:
   - name: Delete server instances
     os_server:
